@@ -1,0 +1,32 @@
+code:
+#include <iostream>
+
+int main() {
+    int n;
+    
+    if (!(std::cin >> n)) {
+        return 1;
+    }
+    
+    int* arr = new int[n];
+    
+    for (int i = 0; i < n; ++i) {
+        std::cin >> arr[i];
+    }
+    
+    for (int i = 0; i < n; ++i) {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl;
+    
+    delete[] arr;
+    
+    return 0;
+}
+
+input:
+4
+10 20 30 40
+
+output:
+10 20 30 40 
