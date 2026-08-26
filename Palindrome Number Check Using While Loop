@@ -1,0 +1,32 @@
+code:
+#include <iostream>
+
+int main() {
+    int num;
+    
+    if (!(std::cin >> num)) {
+        return 1;
+    }
+    
+    int original = num;
+    int reversed = 0;
+    
+    while (num > 0) {
+        reversed = reversed * 10 + (num % 10);
+        num /= 10;
+    }
+    
+    if (original == reversed) {
+        std::cout << "palindrome" << std::endl;
+    } else {
+        std::cout << "not palindrome" << std::endl;
+    }
+    
+    return 0;
+}
+
+input:
+12321
+
+output:
+palindrome
