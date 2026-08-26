@@ -1,0 +1,25 @@
+code:
+#include <iostream>
+
+int main() {
+    int num;
+    
+    if (!(std::cin >> num)) {
+        return 1;
+    }
+    
+    long long factorial = 1;
+    for (int i = 1; i <= num; ++i) {
+        factorial *= i;
+    }
+    
+    std::cout << factorial << std::endl;
+    
+    return 0;
+}
+
+input:
+5
+
+output:
+120
