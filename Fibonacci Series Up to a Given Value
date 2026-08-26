@@ -1,0 +1,29 @@
+code:
+#include <iostream>
+
+int main() {
+    int max_val;
+    
+    if (!(std::cin >> max_val)) {
+        return 1;
+    }
+    
+    int t1 = 0, t2 = 1;
+    int next_term = t1;
+    
+    for (; next_term <= max_val; ) {
+        std::cout << next_term << " ";
+        t1 = t2;
+        t2 = next_term + t2;
+        next_term = t1;
+    }
+    std::cout << std::endl;
+    
+    return 0;
+}
+
+input:
+15
+
+output:
+0 1 1 2 3 5 8 13 
