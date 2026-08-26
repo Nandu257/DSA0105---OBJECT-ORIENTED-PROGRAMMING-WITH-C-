@@ -1,0 +1,43 @@
+code:
+#include <iostream>
+#include <climits>
+
+int main() {
+    int n;
+    
+    if (!(std::cin >> n)) {
+        return 1;
+    }
+    
+    int arr;
+    for (int i = 0; i < n; ++i) {
+        std::cin >> arr[i];
+    }
+    
+    int first = INT_MIN;
+    int second = INT_MIN;
+    
+    for (int i = 0; i < n; ++i) {
+        if (arr[i] > first) {
+            second = first;
+            first = arr[i];
+        } else if (arr[i] > second && arr[i] != first) {
+            second = arr[i];
+        }
+    }
+    
+    if (second == INT_MIN) {
+        std::cout << "No second largest element" << std::endl;
+    } else {
+        std::cout << second << std::endl;
+    }
+    
+    return 0;
+}
+
+input:
+5
+12 35 1 10 34
+
+output:
+34
