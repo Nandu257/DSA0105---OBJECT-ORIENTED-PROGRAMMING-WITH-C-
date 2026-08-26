@@ -1,0 +1,26 @@
+code:
+#include <iostream>
+
+int main() {
+    int num;
+    
+    if (!(std::cin >> num)) {
+        return 1;
+    }
+    
+    if (num > 0) {
+        std::cout << "positive" << std::endl;
+    } else if (num < 0) {
+        std::cout << "negative" << std::endl;
+    } else {
+        std::cout << "zero" << std::endl;
+    }
+    
+    return 0;
+}
+
+input:
+-5
+
+output:
+negative
