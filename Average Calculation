@@ -1,0 +1,22 @@
+code:
+#include <iostream>
+
+int main() {
+    int num1, num2, num3;
+    
+    if (!(std::cin >> num1 >> num2 >> num3)) {
+        return 1;
+    }
+    
+    double average = (num1 + num2 + num3) / 3.0;
+    
+    std::cout << average << std::endl;
+    
+    return 0;
+}
+
+input:
+10 15 20
+
+output:
+15
