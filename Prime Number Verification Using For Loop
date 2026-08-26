@@ -1,0 +1,37 @@
+code:
+#include <iostream>
+
+int main() {
+    int num;
+    
+    if (!(std::cin >> num)) {
+        return 1;
+    }
+    
+    bool is_prime = true;
+    
+    if (num <= 1) {
+        is_prime = false;
+    } else {
+        for (int i = 2; i * i <= num; ++i) {
+            if (num % i == 0) {
+                is_prime = false;
+                break;
+            }
+        }
+    }
+    
+    if (is_prime) {
+        std::cout << "prime" << std::endl;
+    } else {
+        std::cout << "not prime" << std::endl;
+    }
+    
+    return 0;
+}
+
+input:
+29
+
+output:
+prime
