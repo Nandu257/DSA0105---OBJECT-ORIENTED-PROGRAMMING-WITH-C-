@@ -1,0 +1,37 @@
+code:
+#include <iostream>
+
+int main() {
+    int num;
+    
+    if (!(std::cin >> num)) {
+        return 1;
+    }
+    
+    if (num <= 0) {
+        std::cout << "not a Harshad number" << std::endl;
+        return 0;
+    }
+    
+    int original = num;
+    int sum = 0;
+    
+    while (num > 0) {
+        sum += num % 10;
+        num /= 10;
+    }
+    
+    if (original % sum == 0) {
+        std::cout << "Harshad number" << std::endl;
+    } else {
+        std::cout << "not a Harshad number" << std::endl;
+    }
+    
+    return 0;
+}
+
+input:
+18
+
+output:
+Harshad number
