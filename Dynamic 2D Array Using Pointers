@@ -1,0 +1,44 @@
+code:
+#include <iostream>
+
+int main() {
+    int rows, cols;
+    
+    if (!(std::cin >> rows >> cols)) {
+        return 1;
+    }
+    
+    int** arr = new int*[rows];
+    for (int i = 0; i < rows; ++i) {
+        arr[i] = new int[cols];
+    }
+    
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            std::cin >> arr[i][j];
+        }
+    }
+    
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            std::cout << arr[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+    
+    for (int i = 0; i < rows; ++i) {
+        delete[] arr[i];
+    }
+    delete[] arr;
+    
+    return 0;
+}
+
+input:
+2 3
+1 2 3
+4 5 6
+
+output:
+1 2 3 
+4 5 6 
