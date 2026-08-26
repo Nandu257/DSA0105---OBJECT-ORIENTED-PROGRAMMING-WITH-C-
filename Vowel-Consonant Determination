@@ -1,0 +1,28 @@
+code:
+#include <iostream>
+
+int main() {
+    char ch;
+    
+    if (!(std::cin >> ch)) {
+        return 1;
+    }
+    
+    char lower_ch = std::tolower(ch);
+    
+    if (lower_ch == 'a' || lower_ch == 'e' || lower_ch == 'i' || lower_ch == 'o' || lower_ch == 'u') {
+        std::cout << "vowel" << std::endl;
+    } else if ((lower_ch >= 'a' && lower_ch <= 'z')) {
+        std::cout << "consonant" << std::endl;
+    } else {
+        std::cout << "invalid input" << std::endl;
+    }
+    
+    return 0;
+}
+
+input:
+e
+
+output:
+vowel
