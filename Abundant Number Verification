@@ -1,0 +1,41 @@
+code:
+#include <iostream>
+
+int main() {
+    int num;
+    
+    if (!(std::cin >> num)) {
+        return 1;
+    }
+    
+    if (num <= 0) {
+        std::cout << "not an abundant number" << std::endl;
+        return 0;
+    }
+    
+    int sum = 0;
+    for (int i = 1; i * i <= num; ++i) {
+        if (num % i == 0) {
+            if (i != num) {
+                sum += i;
+            }
+            if (num / i != num && num / i != i) {
+                sum += num / i;
+            }
+        }
+    }
+    
+    if (sum > num) {
+        std::cout << "abundant number" << std::endl;
+    } else {
+        std::cout << "not an abundant number" << std::endl;
+    }
+    
+    return 0;
+}
+
+input:
+12
+
+output:
+abundant number
