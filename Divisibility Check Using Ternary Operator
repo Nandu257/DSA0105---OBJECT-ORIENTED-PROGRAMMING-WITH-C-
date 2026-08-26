@@ -1,0 +1,23 @@
+code:
+#include <iostream>
+#include <string>
+
+int main() {
+    int num;
+    
+    if (!(std::cin >> num)) {
+        return 1;
+    }
+    
+    std::string result = (num % 3 == 0) ? "divisible" : "not divisible";
+    
+    std::cout << result << std::endl;
+    
+    return 0;
+}
+
+input:
+12
+
+output:
+divisible
