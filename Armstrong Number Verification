@@ -1,0 +1,51 @@
+code:
+#include <iostream>
+#include <cmath>
+
+int main() {
+    int num;
+    
+    if (!(std::cin >> num)) {
+        return 1;
+    }
+    
+    if (num < 0) {
+        std::cout << "not an Armstrong number" << std::endl;
+        return 0;
+    }
+    
+    int original = num;
+    int temp = num;
+    int digits = 0;
+    
+    while (temp > 0) {
+        digits++;
+        temp /= 10;
+    }
+    
+    if (original == 0) {
+        digits = 1;
+    }
+    
+    temp = original;
+    int sum = 0;
+    while (temp > 0) {
+        int remainder = temp % 10;
+        sum += std::round(std::pow(remainder, digits));
+        temp /= 10;
+    }
+    
+    if (original == sum) {
+        std::cout << "Armstrong number" << std::endl;
+    } else {
+        std::cout << "not an Armstrong number" << std::endl;
+    }
+    
+    return 0;
+}
+
+input:
+153
+
+output:
+Armstrong number
