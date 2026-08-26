@@ -1,0 +1,36 @@
+code:
+#include <iostream>
+
+int main() {
+    int num;
+    
+    if (!(std::cin >> num)) {
+        return 1;
+    }
+    
+    int square = num * num;
+    int sum = 0;
+    
+    while (square > 0) {
+        sum += square % 10;
+        square /= 10;
+    }
+    
+    if (num == 0) {
+        sum = 0;
+    }
+    
+    if (sum == num) {
+        std::cout << "neon number" << std::endl;
+    } else {
+        std::cout << "not a neon number" << std::endl;
+    }
+    
+    return 0;
+}
+
+input:
+9
+
+output:
+neon number
