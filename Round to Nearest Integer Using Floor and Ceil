@@ -1,0 +1,31 @@
+code:
+#include <iostream>
+#include <cmath>
+
+int main() {
+    double num;
+    
+    if (!(std::cin >> num)) {
+        return 1;
+    }
+    
+    double f = std::floor(num);
+    double c = std::ceil(num);
+    
+    int result;
+    if ((num - f) < (c - num)) {
+        result = static_cast<int>(f);
+    } else {
+        result = static_cast<int>(c);
+    }
+    
+    std::cout << result << std::endl;
+    
+    return 0;
+}
+
+input:
+4.6
+
+output:
+5
