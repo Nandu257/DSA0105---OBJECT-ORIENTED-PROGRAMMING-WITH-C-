@@ -1,0 +1,23 @@
+code:
+#include <iostream>
+#include <string>
+
+int main() {
+    int num1, num2;
+    
+    if (!(std::cin >> num1 >> num2)) {
+        return 1;
+    }
+    
+    std::string result = (num1 == num2) ? "equal" : "not equal";
+    
+    std::cout << result << std::endl;
+    
+    return 0;
+}
+
+input:
+25 25
+
+output:
+equal
