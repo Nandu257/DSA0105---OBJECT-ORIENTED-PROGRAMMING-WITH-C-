@@ -1,0 +1,45 @@
+code:
+#include <iostream>
+
+int main() {
+    int rows, cols;
+    
+    if (!(std::cin >> rows >> cols)) {
+        return 1;
+    }
+    
+    int mat1[100][100];
+    int mat2[100][100];
+    
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            std::cin >> mat1[i][j];
+        }
+    }
+    
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            std::cin >> mat2[i][j];
+        }
+    }
+    
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            std::cout << mat1[i][j] + mat2[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+    
+    return 0;
+}
+
+input:
+2 2
+1 2
+3 4
+5 6
+7 8
+
+output:
+6 8 
+10 12 
