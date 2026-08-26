@@ -1,0 +1,39 @@
+code:
+#include <iostream>
+
+int main() {
+    int num;
+    
+    if (!(std::cin >> num)) {
+        return 1;
+    }
+    
+    if (num <= 0) {
+        std::cout << "not a happy number" << std::endl;
+        return 0;
+    }
+    
+    while (num != 1 && num != 4) {
+        int sum = 0;
+        while (num > 0) {
+            int digit = num % 10;
+            sum += digit * digit;
+            num /= 10;
+        }
+        num = sum;
+    }
+    
+    if (num == 1) {
+        std::cout << "happy number" << std::endl;
+    } else {
+        std::cout << "not a happy number" << std::endl;
+    }
+    
+    return 0;
+}
+
+input:
+19
+
+output:
+happy number
