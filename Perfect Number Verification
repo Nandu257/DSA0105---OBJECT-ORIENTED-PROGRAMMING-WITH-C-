@@ -1,0 +1,39 @@
+code:
+#include <iostream>
+
+int main() {
+    int num;
+    
+    if (!(std::cin >> num)) {
+        return 1;
+    }
+    
+    if (num <= 1) {
+        std::cout << "not a perfect number" << std::endl;
+        return 0;
+    }
+    
+    int sum = 1;
+    for (int i = 2; i * i <= num; ++i) {
+        if (num % i == 0) {
+            sum += i;
+            if (i * i != num) {
+                sum += num / i;
+            }
+        }
+    }
+    
+    if (sum == num) {
+        std::cout << "perfect number" << std::endl;
+    } else {
+        std::cout << "not a perfect number" << std::endl;
+    }
+    
+    return 0;
+}
+
+input:
+6
+
+output:
+perfect number
