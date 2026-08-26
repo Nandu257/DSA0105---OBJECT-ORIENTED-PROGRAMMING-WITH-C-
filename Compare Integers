@@ -1,0 +1,24 @@
+code:
+#include <iostream>
+
+int main() {
+    int num1, num2;
+    
+    if (!(std::cin >> num1 >> num2)) {
+        return 1;
+    }
+    
+    if (num1 == num2) {
+        std::cout << "equal" << std::endl;
+    } else {
+        std::cout << "not equal" << std::endl;
+    }
+    
+    return 0;
+}
+
+input:
+12 12
+
+output:
+equal
