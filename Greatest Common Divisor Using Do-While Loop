@@ -1,0 +1,41 @@
+code:
+#include <iostream>
+
+int main() {
+    int num1, num2;
+    
+    if (!(std::cin >> num1 >> num2)) {
+        return 1;
+    }
+    
+    if (num1 < 0) num1 = -num1;
+    if (num2 < 0) num2 = -num2;
+    
+    if (num1 == 0 && num2 == 0) {
+        std::cout << 0 << std::endl;
+        return 0;
+    } else if (num1 == 0) {
+        std::cout << num2 << std::endl;
+        return 0;
+    } else if (num2 == 0) {
+        std::cout << num1 << std::endl;
+        return 0;
+    }
+    
+    int remainder;
+    do {
+        remainder = num1 % num2;
+        num1 = num2;
+        num2 = remainder;
+    } while (num2 != 0);
+    
+    std::cout << num1 << std::endl;
+    
+    return 0;
+}
+
+input:
+56 98
+
+output:
+14
