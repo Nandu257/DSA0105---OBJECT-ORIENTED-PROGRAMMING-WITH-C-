@@ -1,0 +1,28 @@
+code:
+#include <iostream>
+
+int main() {
+    int num;
+    
+    if (!(std::cin >> num)) {
+        return 1;
+    }
+    
+    if (num < 0) {
+        num = -num;
+    }
+    
+    if (num % 7 == 0 || num % 10 == 7) {
+        std::cout << "buzz number" << std::endl;
+    } else {
+        std::cout << "not a buzz number" << std::endl;
+    }
+    
+    return 0;
+}
+
+input:
+27
+
+output:
+buzz number
