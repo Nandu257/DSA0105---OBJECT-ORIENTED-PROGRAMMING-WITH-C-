@@ -1,0 +1,63 @@
+code:
+#include <iostream>
+
+int main() {
+    int r1, c1, r2, c2;
+    
+    if (!(std::cin >> r1 >> c1)) {
+        return 1;
+    }
+    
+    int mat1;
+    for (int i = 0; i < r1; ++i) {
+        for (int j = 0; j < c1; ++j) {
+            std::cin >> mat1[i][j];
+        }
+    }
+    
+    if (!(std::cin >> r2 >> c2)) {
+        return 1;
+    }
+    
+    int mat2;
+    for (int i = 0; i < r2; ++i) {
+        for (int j = 0; j < c2; ++j) {
+            std::cin >> mat2[i][j];
+        }
+    }
+    
+    if (c1 != r2) {
+        return 1;
+    }
+    
+    int result;
+    for (int i = 0; i < r1; ++i) {
+        for (int j = 0; j < c2; ++j) {
+            result[i][j] = 0;
+            for (int k = 0; k < c1; ++k) {
+                result[i][j] += mat1[i][k] * mat2[k][j];
+            }
+        }
+    }
+    
+    for (int i = 0; i < r1; ++i) {
+        for (int j = 0; j < c2; ++j) {
+            std::cout << result[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+    
+    return 0;
+}
+
+input:
+2 2
+1 2
+3 4
+2 2
+5 6
+7 8
+
+output:
+19 22 
+43 50 
