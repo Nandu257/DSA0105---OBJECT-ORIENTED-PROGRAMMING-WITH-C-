@@ -1,0 +1,25 @@
+code:
+#include <iostream>
+
+int main() {
+    int num;
+    
+    if (!(std::cin >> num)) {
+        return 1;
+    }
+    
+    if (num % 2 == 0) {
+        std::cout << "even" << std::endl;
+    } else {
+        std::cout << "odd" << std::endl;
+    }
+    
+    return 0;
+}
+
+input:
+7
+
+output:
+odd
+
