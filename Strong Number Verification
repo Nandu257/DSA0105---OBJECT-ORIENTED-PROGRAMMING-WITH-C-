@@ -1,0 +1,46 @@
+code:
+#include <iostream>
+
+int main() {
+    int num;
+    
+    if (!(std::cin >> num)) {
+        return 1;
+    }
+    
+    if (num < 0) {
+        std::cout << "not a strong number" << std::endl;
+        return 0;
+    }
+    
+    int original = num;
+    int sum = 0;
+    
+    if (num == 0) {
+        sum = 1; 
+    } else {
+        while (num > 0) {
+            int digit = num % 10;
+            int fact = 1;
+            for (int i = 1; i <= digit; ++i) {
+                fact *= i;
+            }
+            sum += fact;
+            num /= 10;
+        }
+    }
+    
+    if (sum == original) {
+        std::cout << "strong number" << std::endl;
+    } else {
+        std::cout << "not a strong number" << std::endl;
+    }
+    
+    return 0;
+}
+
+input:
+145
+
+output:
+strong number
