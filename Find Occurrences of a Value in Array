@@ -1,0 +1,38 @@
+code:
+#include <iostream>
+
+int main() {
+    int n, target;
+    
+    if (!(std::cin >> n)) {
+        return 1;
+    }
+    
+    int arr[100];
+    for (int i = 0; i < n; ++i) {
+        std::cin >> arr[i];
+    }
+    
+    if (!(std::cin >> target)) {
+        return 1;
+    }
+    
+    int count = 0;
+    for (int i = 0; i < n; ++i) {
+        if (arr[i] == target) {
+            count++;
+        }
+    }
+    
+    std::cout << count << std::endl;
+    
+    return 0;
+}
+
+input:
+6
+1 2 3 2 4 2
+2
+
+output:
+3
