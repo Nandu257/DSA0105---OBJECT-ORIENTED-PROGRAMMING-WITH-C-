@@ -1,0 +1,46 @@
+code:
+#include <iostream>
+
+int main() {
+    int n1, n2;
+    
+    if (!(std::cin >> n1)) {
+        return 1;
+    }
+    int arr1[100];
+    for (int i = 0; i < n1; ++i) {
+        std::cin >> arr1[i];
+    }
+    
+    if (!(std::cin >> n2)) {
+        return 1;
+    }
+    int arr2[100];
+    for (int i = 0; i < n2; ++i) {
+        std::cin >> arr2[i];
+    }
+    
+    int merged[200];
+    for (int i = 0; i < n1; ++i) {
+        merged[i] = arr1[i];
+    }
+    for (int i = 0; i < n2; ++i) {
+        merged[n1 + i] = arr2[i];
+    }
+    
+    for (int i = 0; i < n1 + n2; ++i) {
+        std::cout << merged[i] << " ";
+    }
+    std::cout << std::endl;
+    
+    return 0;
+}
+
+input:
+3
+1 2 3
+4
+4 5 6 7
+
+output:
+1 2 3 4 5 6 7 
