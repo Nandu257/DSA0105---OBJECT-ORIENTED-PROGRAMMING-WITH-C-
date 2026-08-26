@@ -1,0 +1,22 @@
+code:
+#include <iostream>
+
+int main() {
+    int num1, num2;
+    
+    if (!(std::cin >> num1 >> num2)) {
+        return 1;
+    }
+    
+    int max_num = (num1 > num2) ? num1 : num2;
+    
+    std::cout << max_num << std::endl;
+    
+    return 0;
+}
+
+input:
+45 82
+
+output:
+82
