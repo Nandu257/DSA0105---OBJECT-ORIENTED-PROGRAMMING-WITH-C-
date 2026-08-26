@@ -1,0 +1,31 @@
+code:
+#include <iostream>
+
+int main() {
+    double num1, num2;
+    
+    if (!(std::cin >> num1 >> num2)) {
+        return 1;
+    }
+    
+    std::cout << num1 + num2 << std::endl;
+    std::cout << num1 - num2 << std::endl;
+    std::cout << num1 * num2 << std::endl;
+    
+    if (num2 != 0.0) {
+        std::cout << num1 / num2 << std::endl;
+    } else {
+        std::cout << "Division by zero error" << std::endl;
+    }
+    
+    return 0;
+}
+
+input:
+10.5 2.0
+
+output:
+12.5
+8.5
+21
+5.25
