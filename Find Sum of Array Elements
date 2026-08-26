@@ -1,0 +1,29 @@
+code:
+#include <iostream>
+
+int main() {
+    int n;
+    
+    if (!(std::cin >> n)) {
+        return 1;
+    }
+    
+    int arr[100];
+    int sum = 0;
+    
+    for (int i = 0; i < n; ++i) {
+        std::cin >> arr[i];
+        sum += arr[i];
+    }
+    
+    std::cout << sum << std::endl;
+    
+    return 0;
+}
+
+input:
+5
+10 20 30 40 50
+
+output:
+150
