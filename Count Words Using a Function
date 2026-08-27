@@ -1,0 +1,32 @@
+code:
+#include <iostream>
+#include <string>
+#include <sstream>
+
+int countWords(const std::string& str) {
+    std::stringstream ss(str);
+    std::string word;
+    int count = 0;
+    while (ss >> word) {
+        count++;
+    }
+    return count;
+}
+
+int main() {
+    std::string inputStr;
+    
+    if (!std::getline(std::cin, inputStr)) {
+        return 1;
+    }
+    
+    std::cout << countWords(inputStr) << std::endl;
+    
+    return 0;
+}
+
+input:
+Object Oriented Programming with C++
+
+output:
+5
