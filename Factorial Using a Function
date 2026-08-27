@@ -1,0 +1,29 @@
+code:
+#include <iostream>
+
+long long computeFactorial(int n) {
+    if (n < 0) return 0;
+    long long fact = 1;
+    for (int i = 1; i <= n; ++i) {
+        fact *= i;
+    }
+    return fact;
+}
+
+int main() {
+    int num;
+    
+    if (!(std::cin >> num)) {
+        return 1;
+    }
+    
+    std::cout << computeFactorial(num) << std::endl;
+    
+    return 0;
+}
+
+input:
+5
+
+output:
+120
