@@ -1,0 +1,24 @@
+code:
+#include <iostream>
+
+double celsiusToFahrenheit(double celsius) {
+    return (celsius * 9.0 / 5.0) + 32.0;
+}
+
+int main() {
+    double celsius;
+    
+    if (!(std::cin >> celsius)) {
+        return 1;
+    }
+    
+    std::cout << celsiusToFahrenheit(celsius) << std::endl;
+    
+    return 0;
+}
+
+input:
+25.0
+
+output:
+77
