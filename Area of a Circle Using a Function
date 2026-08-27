@@ -1,0 +1,25 @@
+code:
+#include <iostream>
+
+double calculateArea(double radius) {
+    const double PI = 3.14159265358979323846;
+    return PI * radius * radius;
+}
+
+int main() {
+    double radius;
+    
+    if (!(std::cin >> radius)) {
+        return 1;
+    }
+    
+    std::cout << calculateArea(radius) << std::endl;
+    
+    return 0;
+}
+
+input:
+5.0
+
+output:
+78.5398
