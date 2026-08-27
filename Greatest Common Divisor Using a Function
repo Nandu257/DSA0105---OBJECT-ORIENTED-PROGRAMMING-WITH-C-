@@ -1,0 +1,29 @@
+code:
+#include <iostream>
+
+int findGCD(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int main() {
+    int num1, num2;
+    
+    if (!(std::cin >> num1 >> num2)) {
+        return 1;
+    }
+    
+    std::cout << findGCD(num1, num2) << std::endl;
+    
+    return 0;
+}
+
+input:
+56 98
+
+output:
+14
