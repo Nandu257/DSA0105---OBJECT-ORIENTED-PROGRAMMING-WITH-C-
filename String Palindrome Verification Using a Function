@@ -1,0 +1,38 @@
+code:
+#include <iostream>
+#include <string>
+
+bool isPalindrome(const std::string& str) {
+    int start = 0;
+    int end = str.length() - 1;
+    while (start < end) {
+        if (str[start] != str[end]) {
+            return false;
+        }
+        start++;
+        end--;
+    }
+    return true;
+}
+
+int main() {
+    std::string inputStr;
+    
+    if (!(std::cin >> inputStr)) {
+        return 1;
+    }
+    
+    if (isPalindrome(inputStr)) {
+        std::cout << "palindrome" << std::endl;
+    } else {
+        std::cout << "not palindrome" << std::endl;
+    }
+    
+    return 0;
+}
+
+input:
+radar
+
+output:
+palindrome
